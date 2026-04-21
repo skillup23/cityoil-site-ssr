@@ -15,7 +15,7 @@ import SectionMain from './components/SectionMain';
 import Subtitle from './components/Subtitle';
 import YandexMap from './components/YandexMap';
 
-export const revalidate = 10; // Обновление каждые 10 секунд
+export const dynamic = 'force-dynamic';
 
 export default function Home() {
   return (
