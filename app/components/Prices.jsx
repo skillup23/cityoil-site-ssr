@@ -12,6 +12,8 @@ import Heading from './Heading';
 import Stella from './Stella';
 import Subtitle from './Subtitle';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Prices() {
   let priceRost = priceRostLocal;
   let priceSorm = priceSormLocal;
@@ -26,40 +28,29 @@ export default async function Prices() {
     console.log('🔄 Запрос к MongoDB для цен...');
     const client = await clientPromise;
     const db = client.db('cityoil');
-    // Отключаем кеширование для свежих данных
-    const dataRost = await db.collection('priceRost').find({}, { noCursorTimeout: false }).toArray();
-    const dataSorm = await db.collection('priceSorm').find({}, { noCursorTimeout: false }).toArray();
-    const dataMach = await db.collection('priceMach').find({}, { noCursorTimeout: false }).toArray();
-    // const dataRazina = await db.collection("priceRazina").find({}).toArray();
-    const dataShos = await db.collection('priceShos').find({}, { noCursorTimeout: false }).toArray();
+
+    // Запускаем все запросы одновременно через Promise.all
+    const [dataRost, dataSorm, dataMach, dataShos] = await Promise.all([
+      db.collection('priceRost').find({}).toArray(),
+      db.collection('priceSorm').find({}).toArray(),
+      db.collection('priceMach').find({}).toArray(),
+      db.collection('priceShos').find({}).toArray(),
+    ]);
+
     console.log('✅ Данные из MongoDB получены успешно');
 
-    // Конвертация MongoDB данных в простой объект
-    priceRost = dataRost.map((item) => ({
-      ...item,
-      _id: item._id.toString(), // Конвертируем ObjectId в строку
-      id: item._id.toString(),
-    }));
-    priceSorm = dataSorm.map((item) => ({
-      ...item,
-      _id: item._id.toString(), // Конвертируем ObjectId в строку
-      id: item._id.toString(),
-    }));
-    priceMach = dataMach.map((item) => ({
-      ...item,
-      _id: item._id.toString(), // Конвертируем ObjectId в строку
-      id: item._id.toString(),
-    }));
-    // priceRazina = dataRazina.map((item) => ({
-    //   ...item,
-    //   _id: item._id.toString(), // Конвертируем ObjectId в строку
-    //   id: item._id.toString(),
-    // }));
-    priceShos = dataShos.map((item) => ({
-      ...item,
-      _id: item._id.toString(), // Конвертируем ObjectId в строку
-      id: item._id.toString(),
-    }));
+    // Вспомогательная функция для чистки данных
+    const mapPrices = (data) =>
+      data.map((item) => ({
+        ...item,
+        _id: item._id.toString(),
+        id: item._id.toString(),
+      }));
+
+    priceRost = mapPrices(dataRost);
+    priceSorm = mapPrices(dataSorm);
+    priceMach = mapPrices(dataMach);
+    priceShos = mapPrices(dataShos);
   } catch (error) {
     console.error('Failed to fetch from MongoDB, using local data:', error);
   }
