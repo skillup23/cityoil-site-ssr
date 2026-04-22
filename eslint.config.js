@@ -1,10 +1,13 @@
 // eslint.config.js
 module.exports = [
   {
-    files: ["**/*.{js,jsx,ts,tsx}"],
+    ignores: ['.next/*', 'out/*', 'node_modules/*'], // Что игнорировать
+  },
+  {
+    files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
@@ -12,7 +15,7 @@ module.exports = [
       },
     },
     rules: {
-      "react/react-in-jsx-scope": "off",
+      'react/react-in-jsx-scope': 'off',
     },
   },
 ];

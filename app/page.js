@@ -117,24 +117,24 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0">
           <Image
             src={partner1}
-            width="auto"
+            width={100}
             height="auto"
             alt="фото АЗС"
-            className="max-w-[208px]"
+            className="max-w-52"
           />
           <Image
             src={partner2}
-            width="auto"
+            width={100}
             height="auto"
             alt="фото АЗС"
-            className="max-w-[182px]"
+            className="max-w-45.5"
           />
           <Image
             src={partner3}
-            width="auto"
+            width={100}
             height="auto"
             alt="фото АЗС"
-            className="max-w-[160px]"
+            className="max-w-40"
           />
           {/* <Link href="https://anboil.ru" target="_blank">
             <Image
@@ -147,7 +147,7 @@ export default function Home() {
           </Link> */}
         </div>
 
-        <h6 className="mt-[50px] text-xl md:text-2xl text-center font-bold">
+        <h6 className="mt-12.5 text-xl md:text-2xl text-center font-bold">
           АЗС «СИТИОЙЛ» приглашает&nbsp;к&nbsp;сотрудничеству
           бизнес&#8209;партнеров
         </h6>
@@ -157,7 +157,7 @@ export default function Home() {
       <InfoBanner style="pt-10 pb-[50px] md:py-20 px-0" idScroll="onas">
         <Heading style="text-center text-white">АЗС СИТИОЙЛ — это</Heading>
 
-        <ul className="mt-[25px] md:mt-[30px] flex items-center justify-between flex-wrap gap-y-6 sm:gap-y-0">
+        <ul className="mt-6.25 md:mt-7.5 flex items-center justify-between flex-wrap gap-y-6 sm:gap-y-0">
           {onas.map(({ id, image, title, subtitle }) => {
             return (
               <li key={id} className="w-1/2 md:w-1/4">
