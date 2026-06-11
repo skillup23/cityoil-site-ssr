@@ -59,7 +59,14 @@ export default async function Prices() {
     <div className="flex flex-col-reverse md:flex-row justify-between">
       <div>
         <Subtitle style="hidden md:block">ТОПЛИВО НАИВЫСШЕГО КАЧЕСТВА</Subtitle>
-        <Heading style="mt-5 md:mt-3">Актуальные цены на&nbsp;топливо</Heading>
+        <Heading style="mt-5 md:mt-3 ">Актуальные цены на&nbsp;топливо</Heading>
+        <p className="mb-5 sm:w-10/12 text-center sm:text-start">
+          Цену и наличие топлива уточняйте у&nbsp;оператора АЗС или
+          по&nbsp;телефону
+          <a href="tel:+78612040444" className=" hover:underline">
+            &nbsp;+7&nbsp;(861)&nbsp;204&nbsp;04&nbsp;44
+          </a>
+        </p>
         <Image
           src={azsFoto1}
           width="auto"

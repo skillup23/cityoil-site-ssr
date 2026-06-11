@@ -21,10 +21,19 @@ export default function Home() {
   return (
     <main>
       <InfoBanner>
-        <p className="mx-auto lg:w-[905px] text-white text-xs md:text-base text-center leading-4 md:leading-6">
+        {/* <p className="mx-auto lg:w-[905px] text-white text-xs md:text-base text-center leading-4 md:leading-6">
           Внимание! На АЗС ведутся ремонтные работы, но&nbsp;продажа топлива
           осуществляется в&nbsp;штатном режиме. Мы&nbsp;всегда рады видеть вас
           в&nbsp;числе наших&nbsp;клиентов!
+        </p> */}
+        <p className="mx-auto lg:w-226.25 text-white text-base md:text-base text-center leading-5 md:leading-6">
+          Уважаемые клиенты! <br />В связи с возникшим на рынке дефицитом
+          топлива цена закупки для нас сейчас превышает привычную розничную
+          цену. Мы не хотим идти по пути завоза топлива низкого качества —
+          для&nbsp;нас важны безопасность и надёжность. Именно поэтому мы
+          вынуждены временно держать текущую цену, чтобы сохранить качественное
+          топливо на заправках. Как только дефицит будет преодолён, мы
+          оперативно вернём цену к стандартному уровню. Спасибо за понимание.
         </p>
         {/* <p className="mx-auto lg:w-[905px] text-white text-xs md:text-base text-center leading-4 md:leading-6">
           Дорогие клиенты! Наша АЗС по адресу ул.&nbsp;С.&nbsp;Разина,&nbsp;57,
