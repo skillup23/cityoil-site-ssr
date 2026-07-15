@@ -238,7 +238,19 @@ export default function Home() {
       <SectionMain idScroll="workin">
         <Subtitle>ИЩЕМ СОТРУДНИКОВ</Subtitle>
         <Heading>Вакансии</Heading>
-        <ul className="mt-[30px] flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
+        <h5 className="text-base md:text-xl text-center text-gray font-bold">
+          На данный момент свободных вакансий&nbsp;нет. <br />
+          Мы&nbsp;всегда рады видеть в&nbsp;своей команде новых сотрудников,
+          поэтому вы&nbsp;можете отправить нам своё резюме на&nbsp;электронную
+          почту&nbsp;
+          <a
+            href="mailto:azs5@cityoil23.ru"
+            className="text-green hover:underline"
+          >
+            azs5@cityoil23.ru
+          </a>
+        </h5>
+        {/* <ul className="mt-[30px] flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
           {workers.map(({ id, name, place, price, time, phone, adresses }) => {
             return (
               <li
@@ -261,7 +273,7 @@ export default function Home() {
               </li>
             );
           })}
-        </ul>
+        </ul> */}
       </SectionMain>
 
       {/* --------Контакты--------- */}
