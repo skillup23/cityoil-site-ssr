@@ -2,9 +2,15 @@ import { azsAdress, contacts, onas, workers } from '@/public/data';
 // import partner4 from '@/public/main/anb.svg';
 import partner2 from '@/public/main/gazprom.svg';
 import iconMap from '@/public/main/iconMap.svg';
+import logo from '@/public/main/logo.svg';
 // import mapAzs from '@/public/main/mapAzs.jpg';
 import partner3 from '@/public/main/rosneft.svg';
 import partner1 from '@/public/main/tatneft.svg';
+import bonusApp from '@/public/main/phoneBonus.png';
+import qrGooglePlay from '@/public/main/qrGooglePlay.jpg';
+import getGooglePlay from '@/public/main/getGooglePlay.svg';
+import qrAppStore from '@/public/main/qrAppStore.jpg';
+import getAppStore from '@/public/main/getAppStore.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import Heading from './components/Heading';
@@ -191,7 +197,92 @@ export default function Home() {
 
       {/* --------Акции--------- */}
       <SectionMain style="pattern_background" idScroll="sales">
-        <Subtitle>ДЛЯ НОВЫХ И ПОСТОЯННЫХ КЛИЕНТОВ</Subtitle>
+        <Subtitle>Запустилось приложение</Subtitle>
+        <Heading>АЗС СИТИОЙЛ!</Heading>
+        <div className="flex flex-col md:flex-row justify-between gap-10">
+          <div className="w-full">
+            <h5 className="md:w-10/12 text-base text-center md:text-xl md:text-start font-bold">
+              Скачайте мобильное приложение «АЗС&nbsp;СИТИОЙЛ», чтобы
+              необходимая информация была под рукой. <br />
+              Узнавайте наличие топлива на&nbsp;АЗС&nbsp;через&nbsp;уведомления.
+            </h5>
+
+            <ul className="hidden md:flex my-10 gap-20">
+              <li>
+                <Image
+                  src={qrGooglePlay}
+                  width="auto"
+                  height="auto"
+                  alt="Приложение АЗС СИТИОЙЛ"
+                  className="w-37.5 h-37.5 mx-auto"
+                />
+                <h5 className="mt-4 w-37.5 text-base md:text-xl text-center font-bold">
+                  Скачать в Google&nbsp;Play
+                </h5>
+              </li>
+              <li>
+                <Image
+                  src={logo}
+                  width="auto"
+                  height="auto"
+                  alt="Приложение АЗС СИТИОЙЛ"
+                  className="w-37.5 h-37.5 mx-auto"
+                />
+              </li>
+
+              <li>
+                <Image
+                  src={qrAppStore}
+                  width="auto"
+                  height="auto"
+                  alt="Приложение АЗС СИТИОЙЛ"
+                  className="w-37.5 h-37.5 mx-auto"
+                />
+                <h5 className="mt-4 w-37.5 text-base md:text-xl text-center font-bold">
+                  Скачать в App&nbsp;Store
+                </h5>
+              </li>
+            </ul>
+
+            <div className="flex md:hidden my-10 gap-8 items-center justify-center">
+              <Link
+                href="https://play.google.com/store/apps/details?id=ru.bossbonus.cityoil&pcampaignid=web_share"
+                target="_blank"
+                className="bg-black rounded-lg p-2 flex items-center justify-center"
+              >
+                <Image
+                  src={getGooglePlay}
+                  width="auto"
+                  height="auto"
+                  alt="Приложение АЗС СИТИОЙЛ"
+                />
+              </Link>
+              <Link
+                href="https://apps.apple.com/ru/app/азс-ситиойл/id6762642385"
+                target="_blank"
+                className="bg-black rounded-lg p-2 flex items-center justify-center"
+              >
+                <Image
+                  src={getAppStore}
+                  width="auto"
+                  height="auto"
+                  alt="Приложение АЗС СИТИОЙЛ"
+                />
+              </Link>
+            </div>
+
+            <h5 className="text-base md:text-base font-bold text-center md:text-start">
+              * Внимание! Списание и начисление бонусов временно недоступно.
+            </h5>
+          </div>
+          <Image
+            src={bonusApp}
+            width="auto"
+            height="auto"
+            alt="Приложение АЗС СИТИОЙЛ"
+            className="w-[336px] md:w-[336px] mx-auto"
+          />
+          {/* <Subtitle>ДЛЯ НОВЫХ И ПОСТОЯННЫХ КЛИЕНТОВ</Subtitle>
         <Heading>Акции и предложения</Heading>
         <div className="flex flex-col md:flex-row items-center">
           <div className="w-full my-[20px] md:mr-20 md:ml-0">
@@ -206,7 +297,7 @@ export default function Home() {
               постоянно стремимся улучшать условия сотрудничества и создавать
               привлекательные акции для&nbsp;наших&nbsp;клиентов.
             </h5>
-          </div>
+          </div> */}
 
           {/* <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             <Image
